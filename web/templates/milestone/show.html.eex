@@ -1,0 +1,28 @@
+<h2>Show milestone</h2>
+
+<ul>
+
+  <li>
+    <strong>Target:</strong>
+    <%= @milestone.target %>
+  </li>
+
+  <li>
+    <strong>Archived:</strong>
+    <%= @milestone.archived %>
+  </li>
+
+  <li>
+    <strong>Expired at:</strong>
+    <%= @milestone.expired_at %>
+  </li>
+
+  <li>
+    <strong>User:</strong>
+    <%= @milestone.user_id %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: milestone_path(@conn, :edit, @milestone) %>
+<%= link "Back", to: milestone_path(@conn, :index) %>

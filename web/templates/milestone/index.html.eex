@@ -1,0 +1,17 @@
+<div class="row">
+<%= for milestone <- @milestone do %>
+<div class="col-md-4 panel panel-default">
+  <div class="panel-body">
+      <h4><%= milestone.target %></h4>
+      <p><%= milestone.archived %></p>
+      <p>过期: <%= milestone.expired_at %></p>
+      <p>发布: <%= milestone.user.email %></p>
+      <%= link "更新", to: milestone_path(@conn, :edit, milestone), class: "btn btn-default btn-xs" %>
+      <%= link "删除", to: milestone_path(@conn, :delete, milestone), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+
+  </div>
+</div>
+<% end %>
+</div>
+
+<%= link "New milestone", to: milestone_path(@conn, :new) %>
